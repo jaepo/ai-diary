@@ -43,6 +43,11 @@ export default function DiaryEditor({
         setShowResponse(true);
         onNewEntry(newEntry);
         setContent("");
+
+        // 3초 후 일기 목록으로 부드럽게 스크롤
+        setTimeout(() => {
+          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }, 3000);
       } else {
         alert("일기 저장에 실패했습니다");
       }
